@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <script src="https://kit.fontawesome.com/5d3b9a9e2e.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boda Isabel & Víctor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@1,700&display=swap"
+    rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfaf7; 
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+      color: #333;
+    }
+
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      background-color: transparent; 
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 0 1rem;
+    }
+
+    header img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    nav.main-nav {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background-color: rgba(253, 250, 247, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(212, 163, 115, 0.2);
+    }
+
+    nav .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #7d8c6b;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav .menu-links a {
+      margin: 0.5rem 1rem;
+      color: #7d8c6b;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav .menu-links a:hover {
+      color: #b6c6a4;
+    }
+
+    .floral-divider {
+      background: url('img/guirnalda_buena.png') no-repeat center;
+      background-size: contain;
+      height: 80px;
+      margin: 2rem auto;
+      width: 100%;
+    }
+
+    .transport-option {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .image-container {
+      margin: 25px 0;
+      text-align: center;
+    }
+    
+    .image-container img {
+      max-width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border: 6px solid #fff;
+    }
+
+    h2 {
+      font-family: 'Great Vibes', cursive;
+      color: #7d8c6b;
+      font-size: 3.5rem;
+      text-align: left;
+      font-weight: normal;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      position: relative;
+    }
+
+    h2 i {
+      font-size: 1.8rem;
+      color: #b6c6a4;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, #b6c6a4, transparent);
+    }
+
+    .transport-option h3 {
+      font-family: 'Playfair Display', serif;
+      color: #6a7a58;
+      font-style: italic;
+      font-size: 1.7rem;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .transport-option h3::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: #e2e8da;
+    }
+
+    .countdown-victoriana {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+      gap: 20px;
+      text-align: center;
+      margin-top: 2rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .countdown-victoriana div {
+      background: #fff;
+      border: 1px solid #e2e8da;
+      border-radius: 12px;
+      padding: 10px 8px;
+      box-shadow: 0 4px 12px rgba(182, 198, 164, 0.15);
+      min-width: 65px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      gap: 4px;
+    }
+
+    .countdown-victoriana span {
+      font-size: 2rem;
+      color: #7d8c6b;
+      font-weight: bold;
+    }
+
+    .label {
+      font-size: 0.9rem;
+      color: #b6c6a4;
+      text-transform: uppercase;
+    }
+
+    iframe {
+      border: none;
+      display: block;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      background-color: #fff;
+      width: 100%;
+    }
+
+    #como_llegar iframe {
+      height: 450px;
+    }
+
+    #confirmacion iframe {
+      height: 900px !important;
+    }
+
+    #confirmacion {
+      width: 100%;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    #confirmacion h2 {
+      justify-content: flex-start;
+    }
+
+    #confirmacion p {
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+
+    footer p {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      color: #7d8c6b;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 2.4rem !important;
+        gap: 10px;
+        margin-bottom: 1rem;
+      }
+
+      h2 i {
+        font-size: 1.2rem !important;
+      }
+
+      h2::after {
+        width: 45px;
+      }
+
+      .transport-option h3 {
+        font-size: 1.3rem !important;
+        margin-top: 1.2rem;
+      }
+
+      nav .menu-toggle {
+        display: block;
+        margin: 0 auto;
+      }
+
+      nav .menu-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav .menu-links.show {
+        display: flex;
+      }
+
+      nav .menu-links a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+
+      .countdown-victoriana {
+        gap: 8px;
+      }
+      
+      .countdown-victoriana div {
+        min-width: 60px;
+        padding: 8px 4px;
+      }
+
+      .countdown-victoriana span {
+        font-size: 1.5rem;
+      }
+
+      .floral-divider {
+        height: 50px;
+        margin: 1.5rem auto;
+      }
+
+      #como_llegar iframe {
+        height: 350px;
+      }
+      #confirmacion iframe {
+        height: 1200px !important;
+      }
+      .maps-button {
+        width: auto;
+        padding: 10px 18px;
+        font-size: 0.85rem;
+        gap: 8px;
+      }
+      
+      .maps-button i {
+        font-size: 1rem;
+      }
+    }
+    .maps-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background-color: #7d8c6b;
+      color: #ffffff !important;
+      padding: 14px 24px;
+      border-radius: 50px;
+      text-decoration: none !important;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: bold;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(125, 140, 107, 0.3);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .maps-button:hover {
+      background-color: #b6c6a4;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(125, 140, 107, 0.4);
+    }
+
+    .maps-button i {
+      font-size: 1.2rem;
+      color: #fff !important;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <img src="img/logo_boda_bueno.png" alt="Isabel & Víctor logo">
+    </header>
+
+    <nav class="main-nav">
+      <button class="menu-toggle" onclick="toggleMenu()">☰ Menú</button>
+      <div class="menu-links" id="menu">
+        <a href="#cuando_donde">Cuándo y dónde</a>
+        <a href="#como_llegar">Cómo llegar</a>
+        <a href="#alojamiento">Alojamiento</a>
+        <a href="#recomendaciones">Recomendaciones</a>
+        <a href="#confirmacion">Confirmar Asistencia</a>
+      </div>
+    </nav>
+
+    <section id="cuando_donde">
+      <div class="transport-option">
+        <h2><i class="fa-solid fa-map-marker-alt"></i> Cuándo y dónde</h2>
+    
+        <ul style="list-style: none; padding: 0; margin: 20px 0; font-family: Arial, sans-serif; font-size: 16px;">
+          <li style="margin-bottom: 20px;">
+            <h3>Cuándo</h3>
+            <p style="margin: 5px 0 10px 0;">
+              Nos casamos el <strong>10 de julio de 2026</strong>.<br>
+              La ceremonia será entre las <strong>18:00</strong> y las <strong>19:00</strong> (os lo pondremos aquí cuando sepamos la hora exacta).<br>
+              <em>¡Os rogamos puntualidad!</em>
+            </p>
+    
+            <div style="text-align: center; margin-top: 15px;">
+              <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Isabel+y+Víctor&dates=20260710T160000Z/20260710T210000Z&details=Boda+en+Finca+de+San+Juan,+Castañeda+(Cantabria)&location=Finca+de+San+Juan,+Castañeda,+Cantabria&sf=true&output=xml"
+                target="_blank" 
+                style="display:inline-flex; align-items:center; gap:8px; background-color:#b6c6a4; color:#fff; padding:10px 16px; border-radius:6px; font-size:14px; font-family:Arial,sans-serif; text-decoration:none; box-shadow:0 2px 6px rgba(182, 198, 164, 0.4);">
+                <span style="color:#fff; font-weight:bold;">➕</span> 
+                <span>Añadir a mi calendario</span>
+              </a>
+            </div>
+            
+          <div class="countdown-victoriana" id="countdown" style="margin: 40px 0;">
+            <div><span id="days">0</span><div class="label">Días</div></div>
+            <div><span id="hours">0</span><div class="label">Horas</div></div>
+            <div><span id="minutes">0</span><div class="label">Min</div></div>
+            <div><span id="seconds">0</span><div class="label">Seg</div></div>
+          </div>
+    
+          <li>
+            <h3>Dónde</h3>
+            <p style="margin: 5px 0 0 0;">
+              <strong>Finca de San Juan</strong>, Castañeda (Cantabria)<br>
+              <img src="img/finca_san_juan.png" alt="Finca de San Juan" style="max-width: 100%; border-radius: 8px; margin-top: 10px;">
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    
+    <div class="floral-divider"></div>
+
+    <section id="como_llegar">
+      <div class="transport-option">
+        <h2><i class="fa-solid fa-route"></i> Cómo llegar</h2>
+        <p><strong>Finca de San Juan, Castañeda (Cantabria)</strong></p>
+    
+        <div style="display: flex; gap: 12px; margin: 20px 0;">
+          <a href="https://www.google.com/maps/search/?api=1&query=Finca+de+San+Juan,+Castañeda,+Cantabria,+España" target="_blank" style="text-decoration: none;">
+            <div style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              background-color: #ffffff;
+              border: 1px solid #dadce0;
+              border-radius: 8px;
+              padding: 10px 14px;
+              box-shadow: 0 1px 3px rgba(60,64,67,0.3);
+              font-family: Arial, sans-serif;
+              font-size: 15px;
+              color: #202124;
+              cursor: pointer;
+            ">
+              <img src="https://static.vecteezy.com/system/resources/previews/016/716/478/non_2x/google-maps-icon-free-png.png" 
+                   alt="Google Maps" width="28" height="28">
+              <span>Google Maps</span>
+            </div>
+          </a>
+    
+          <a href="http://maps.apple.com/?place-id=I580C26944F58343C&address=Villabañez%2C+129B%2C+39660+Castañeda%2C+Cantabria%2C+España&coordinate=43.3162543%2C-3.9557038&name=FINCA+DE+SAN+JUAN-+HOSTERIA+%26+CATERING&_provider=9902" target="_blank" style="text-decoration: none;">
+            <div style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              background-color: #ffffff;
+              border: 1px solid #dadce0;
+              border-radius: 8px;
+              padding: 10px 14px;
+              box-shadow: 0 1px 3px rgba(60,64,67,0.3);
+              font-family: Arial, sans-serif;
+              font-size: 15px;
+              color: #202124;
+              cursor: pointer;
+            ">
+              <img src="img/apple_maps_icon.png" 
+                   alt="Apple Maps" width="28" height="28" style="border-radius: 4px;">
+              <span>Apple Maps</span>
+            </div>
+          </a>
+        </div>
+    
+        <div style="margin-bottom: 30px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.8981218364415!2d-3.9578168226979904!3d43.31639207414788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd493bb748468273%3A0x7c21c879f46bb6ae!2sFinca%20de%20San%20Juan%20Hoster%C3%ADa%20%26%20Catering!5e0!3m2!1ses!2ses!4v1750001076711!5m2!1ses!2ses"
+            width="100%" height="450" style="border:0; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    
+        <h3>En autobús</h3>
+        <p>Habrá servicio gratuito de autobús desde Santander tanto para la ida como para la vuelta.</p>
+        <p>El autobús hará dos paradas en Santander:</p>
+        <ul>
+          <li>Zona centro</li>
+          <li>Zona Sardinero</li>
+        </ul>
+        <p>Os pondremos los horarios y los puntos de parada en cuanto los tengamos confirmados.</p>
+    
+        <h3>En coche</h3>
+        <p>La finca dispone de parking gratuito para coches.</p>
+        <p>Para llegar, lo más fácil es:</p>
+        <ol>
+          <li>Tomar la A-8 dirección Bilbao</li>
+          <li>Coger la salida 220 que lleva al pueblo de Castañeda</li>
+          <li>En la rotonda, tomar la primera salida</li>
+          <li>Seguir la calle principal hasta un cruce donde está señalizado Hostería Castañeda a la izquierda</li>
+        </ol>
+      </div>
+    </section>    
+
+    <div class="floral-divider"></div>
+
+    <section id="alojamiento">
+      <div class="transport-option">
+        <h2><i class="fa-solid fa-bed"></i> Alojamiento</h2>
+        <p>Por si no tenéis idea de dónde quedaros, os damos algunas ideas de zonas y alojamientos. Si tenéis cualquier duda, preguntadnos y os ayudamos 🤗.</p>
+        <h3>Santander centro</h3>
+        <p>Como su nombre indica es la zona centro de Santander, todo lo que está cerca de la bahía y el casco histórico. Lo mejor es que hay un montón de bares y restaurantes, podréis pasear por la bahía o coger el barco para ir al otro lado de la bahía.</p>
+        <p>Además, pasan un montón de autobuses que os llevan a la playa del Sardinero cada pocos minutos.</p>
+        
+        <div class="image-container">
+          <img src="img/bahia.png" alt="Bahía de Santander">
+        </div>
+
+        <h3>Santander zona Sardinero</h3>
+        <p>Si queréis tener la playa a dos pasos, este es el mejor sitio. En esta zona están las dos playas del Sardinero, el palacio de la Magdalena, la playa de Mataleñas y el faro de Cabo Mayor.</p>
+        <p>Hay un montón de autobuses que os llevan al centro en muy pocos minutos.</p>
+        
+        <div class="image-container">
+          <img src="img/sardinero2.png" alt="Playa del Sardinero">
+        </div>
+
+        <h3>Torrelavega</h3>
+        <p>Si preferís alojaros cerca de la finca, la ciudad más cercana es Torrelavega. Además, estaréis muy bien situados si queréis ir a otros pueblos como Suances, Santillana o Comillas, que son muy bonitos.</p>
+        <div class="image-container">
+          <img src="img/torrelavega.png" alt="Torrelavega">
+        </div>
+
+        <h3>Otras zonas</h3>
+        <p>Por último, si preferís quedaros en otro sitio de la "tierruca", os invitamos a ello, porque hay sitios chulísimos.</p>
+        <p>Es cierto que igual no es la opción más cómoda para el día de la boda, pero tenéis un fin de semana por delante, y Cantabria es infinita. Si tenéis cualquier duda, nos decís.</p>
+    </section>
+
+    <div class="floral-divider"></div>
+
+    <section id="recomendaciones">
+      <div class="transport-option">
+        <h2><i class="fa-solid fa-lightbulb"></i> Nuestras recomendaciones</h2>
+        <p>Os dejamos algunas recomendaciones que nos encantan, por Santander y alrededaores (que sí, que las rabas están muy buenas, pero las tortillas de patata aquí también 😉).</p>
+        <div style="text-align: center; margin: 25px 0 35px 0;">
+          <a href="https://maps.app.goo.gl/WtdhPRLppNb8ob6s5" target="_blank" class="maps-button">
+            <i class="fa-solid fa-map-location-dot"></i>
+            Ver en Google Maps
+          </a>
+        </div>
+        <h3><i class="fas"></i> Nuestros favoritos en Santander</h3>
+        <ul style="flex: 1; min-width: 200px;">
+          <li>Pinchos de <strong>tortilla</strong>: <a href="https://maps.app.goo.gl/M1UZARXoemLy4Wen7">Cañadío </a> (premio a mejor tortilla de España 2023), <a href="https://maps.app.goo.gl/fYW1HVwyvY3ysWAB7">Diluvio</a>, <a href="https://maps.app.goo.gl/Lv9W12FXny6AfvD1A">Bodi</a> (hay varios en la ciudad). En general, todas están para chuparse los dedos!</li>
+          <li>Las <strong>pizzas</strong> de <a href="https://maps.app.goo.gl/Qhdc7UycJoVDwbWq8">Eleonora</a>.</li>
+          <li>Las <strong>focaccias</strong> del <a href="https://maps.app.goo.gl/TVqdBTt8e8nfwMtD8">Bello Bello</a>.</li>
+          <li><strong>Bodegas</strong> <a href="https://maps.app.goo.gl/EbkTQFZ8eQoH7VNv8">La conveniente</a>  un sitio con mucho encanto y solera, se come de <strong>raciones</strong> muy asequibles, y <a href="https://maps.app.goo.gl/TVmsVKrrsYRH2iXt5">Bodega Fuente De</a> que siempre esta lleno (destacar el pincho de queso picón típco de la tierruca).</li>
+          <li><a href="https://maps.app.goo.gl/pP8wNcCkNZoAvxQ97">El Sol</a>: situado en una zona con ambiente alternativo. Bar de picoteo que nunca falla. Eso sí, no reservan y siempre se llena, pero puedes esperar tomándote algo en las escaleras más animadas de Santander.</li>
+          <li><a href="https://maps.app.goo.gl/RzAjJ6QVVjzBkdqV7">La Bruma</a>: los nachos y tacos nunca fallan.</li>
+          <li><a href="https://maps.app.goo.gl/gvnPS6Z2kgPUnXj78">Mercado Gastronómico del Este</a>: la mejor opcion si llueve o hace frio, dentro encontrareis varios bares de pinchos.</li>
+          <li><a href="https://maps.app.goo.gl/h7gWcGie6PXkHyN18">Calle del medio</a>: en pleno centro y con mucho encanto, encontrareis varios bares como <a href="https://maps.app.goo.gl/FMZtRdvgebfNqvAU8">La Tuta</a>, <a href="https://maps.app.goo.gl/wqqnxKLh4upG6iMs9">La Cátedra</a> o <a href="https://maps.app.goo.gl/WGbqJESYGpp3e6XK7">El Bocarte</a> para tomar <strong>raciones</strong> o <strong>pinchos</strong>.</li>
+          <li>De <strong>cócteles</strong>, estos son los bares de cocteles con encanto que nos gustan: <a href="https://maps.app.goo.gl/Agq3diUBEDLDmPam9">Little bobby speakeasy</a>, <a href="https://maps.app.goo.gl/KUY1L8jJkwSpUxqt6">La Solía</a>, <a href="https://maps.app.goo.gl/WQEWPusX79d3ppyB7">Hygge</a> y <a href="https://maps.app.goo.gl/MrhmeghYfia8efATA">La Enmienda 18</a>.</li>
+          <li><strong>Cervezas artesanas</strong> (tenéis que probar la Dougalls): <a href="https://maps.app.goo.gl/s2M7yBU6d3n6dwrw7">La Merla</a> y <a href="https://maps.app.goo.gl/7azoAhzmwi1TVKPN8">Cervezas DouGall's</a> (en este último tienen comida también)</li>
+          <li><strong>Desayunos y brunch</strong>: <a href="https://maps.app.goo.gl/J19MMC6md5okqZwh9">Panistas</a>, <a href="https://maps.app.goo.gl/KqJss1Vm6B1MKv3S9">With Love</a>, <a href="https://maps.app.goo.gl/VyE3pi9UPLUCHMcf6">Santa café</a>, <a href="https://maps.app.goo.gl/SpZxrkWnT1WxtQhT9">La Salvaje</a>.</li>
+          <li><strong>Terraza con vistas</strong>: <a href="https://maps.app.goo.gl/8Mrtetq4XTVhZgfKA">El Hotel Real</a> (terraza con vistas a la bahía, pero los precios son algo caros)</li>
+          <li><strong>Bares de fiesta</strong>: <a href="https://maps.app.goo.gl/PMrSp9xvB7C7orrq5">Bares de cañadío</a> y <a href="https://maps.app.goo.gl/q6PncfsjTfUCNGLy5">Lo que diga la rubia</a></li>
+        </ul>
+        <h3><i class="fas"></i> Otros planes alrededor de Santander:</h3>
+        <ul style="flex: 1; min-width: 200px;">
+          <li>Para ver el atardecer: el <a href="https://maps.app.goo.gl/UiZkVgAXgTtQTtwQA">Rayo Verde</a>, el <a href="https://maps.app.goo.gl/j4xpSSHGPhqJdhA89">Sol y Sal</a>, el <a href="https://maps.app.goo.gl/AQXnujcGRLjaUa3b6">Panteón del Inglés</a>, el <a href="https://maps.app.goo.gl/WmGenh6isPAFKEqh9">faro de Cabo Mayor</a> y el <a href="https://maps.app.goo.gl/UnXuAedW6NQZLT5D9">Castillo de los Locos</a></li>
+          <li>Pueblos con encanto: Santillana del Mar, Comillas, Liérganes y Potes</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="floral-divider"></div>
+
+    <section id="confirmacion">
+      <h2><i class="fa-solid fa-envelope-open-text"></i> Confirmar Asistencia</h2>
+      <p>Os agradecemos que uséis el siguiente formulario para confirmar vuestra asistencia y la de vuestro acompañante</p>
+      <iframe src="https://forms.gle/HFqCWtjMETqLbgsg9"></iframe>
+    </section>
+
+    <div class="floral-divider"></div>
+
+    <footer>
+      <p>Con cariño, Isabel & Víctor ❤️</p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuLinks = document.querySelectorAll("#menu a");
+      menuLinks.forEach(link => {
+        link.addEventListener("click", function () {
+          const menu = document.getElementById("menu");
+          if (window.innerWidth <= 600) {
+            menu.classList.remove("show");
+          }
+        });
+      });
+    });
+  </script>
+  
+  <script>
+    const eventDate = new Date("2026-07-10T18:30:00").getTime();
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance <= 0) {
+        document.getElementById("countdown").innerHTML = "<strong>¡Hoy es el gran día!</strong>";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+    };
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+
+</html>
